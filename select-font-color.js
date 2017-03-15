@@ -1,21 +1,20 @@
-// Set the placeholder text color for Styled Select
-function selectFontColor() {
+function selectFontColor(placeholderColor,selectedColor) {
 	$('.styled-select select').change(function() {
 		if($(this).val() !== ''){
-			$(this).css('color','rgb(51,51,51);'); // Color once an item is selected
+			$(this).css('color',selectedColor);
 		} else {
-			$(this).css('color','rgb(153,153,153);'); // Placeholder color
+			$(this).css('color',placeholderColor);
 		}
 	});
 	$('.styled-select select').each(function() {
 		if($(this).val()){
-			$(this).css('color','rgb(51,51,51);'); // Color once an item is selected
+			$(this).css('color',selectedColor);
 		} else {
-			$(this).css('color','rgb(153,153,153);'); // Placeholder color
+			$(this).css('color',placeholderColor);
 		}
 	});
 }
 
 $(document).ready(function(){
-	selectFontColor();
+	selectFontColor('rgb(153,153,153)','rgb(51,51,51)');
 });
